@@ -31,8 +31,8 @@ const Hero = () => {
             priority={true}
             sizes='(width: 100%)'
           />
-          <div className='hero__image-overlay' />
         </div>
+        <div className='hero__image-overlay' />
       </div>
     </div>
   );

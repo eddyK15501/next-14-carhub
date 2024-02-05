@@ -170,7 +170,7 @@
 }
 
 .footer__links {
-  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20 justify-center items-center text-center md:text-start;
 }
 
 .footer__link {
@@ -182,7 +182,7 @@
 }
 
 .footer__copyrights-link {
-  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+  @apply flex-1 flex md:justify-end justify-center mx-auto md:me-16 max-md:mt-4 gap-10;
 }
 /* END: Footer styles */
 
