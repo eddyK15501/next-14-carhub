@@ -29,6 +29,7 @@ const Hero = () => {
             fill={true}
             className='object-contain'
             priority={true}
+            sizes='(width: 100%)'
           />
           <div className='hero__image-overlay' />
         </div>

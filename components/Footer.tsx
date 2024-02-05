@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { footerLinks } from '@/constants';
+
 const Footer = () => {
   return (
     <footer className='flex flex-col text-black-100 mt-5 border-t border-gray-100'>
@@ -17,7 +19,26 @@ const Footer = () => {
             Carhub 2023 <br /> All rights reserved &copy;
           </p>
         </div>
-        <div className='footer__links'></div>
+        <div className='footer__links'>
+          {footerLinks.map((link) => {
+            return (
+              <div key={link.title} className='footer__link'>
+                <h3 className='font-bold'>{link.title}</h3>
+                {link.links.map((item) => {
+                  return (
+                    <Link
+                      key={item.title}
+                      href={item.url}
+                      className='text-gray-500'
+                    >
+                      {item.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </footer>
   );
