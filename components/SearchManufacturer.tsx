@@ -12,6 +12,16 @@ const SearchManufacturer = ({
 }: SearchManufacturerProps) => {
   const [query, setQuery] = useState('');
 
+  const filteredManufacturers =
+    query === ''
+      ? manufacturers
+      : manufacturers.filter((item) =>
+          item
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .startsWith(query.toLowerCase().replace(/\s+/g, ''))
+        );
+
   return (
     <div className='search-manufacturer'>
       <Combobox>
@@ -31,18 +41,32 @@ const SearchManufacturer = ({
             displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}
           />
+          <Transition
+            as={Fragment}
+            leave='transition ease-in duration-100'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
+            afterLeave={() => setQuery('')}
+          >
+            <Combobox.Options>
+              {filteredManufacturers.map((item) => (
+                  <Combobox.Option
+                    key={item}
+                    value={item}
+                    className={({ active }) =>
+                      `relative search-manufacturer__option ${
+                        active ? 'bg-primary-blue text-white' : 'text-gray-900'
+                      }`
+                    }
+                  >
+                    {item}
+                  </Combobox.Option>
+                ))
+              }
+            </Combobox.Options>
+          </Transition>
         </div>
       </Combobox>
-      <Transition
-        as={Fragment}
-        // show={}
-        leave='transition ease-in duration-100'
-        leaveFrom='opacity-100'
-        leaveTo='opacity-0'
-        afterLeave={() => setQuery('')}
-      >
-        <Combobox.Options></Combobox.Options>
-      </Transition>
     </div>
   );
 };
