@@ -38,6 +38,7 @@ const CarCard = ({ car }: CarCardProps) => {
           priority={false}
           className='object-contain'
           alt='Car Model'
+          sizes={'width: 100%'}
         />
       </div>
       <div className='relative flex w-full mt-2'>
