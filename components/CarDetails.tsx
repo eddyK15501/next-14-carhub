@@ -39,7 +39,11 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                 leaveTo='opacity-0 scale-95'
               >
                 <Dialog.Panel className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white text-left shadow-xl transition-all flex flex-col gap-5'>
-                  <button type='button' onClick={closeModal} className='absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full'>
+                  <button
+                    type='button'
+                    onClick={closeModal}
+                    className='absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full'
+                  >
                     <Image
                       src='/close.svg'
                       alt='Close Icon'
@@ -50,8 +54,51 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   </button>
                   <div className='flex flex-1 flex-col gap-3'>
                     <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
-                      
+                      {/* Temporary Car Image */}
+                      <Image
+                        src='/hero.png'
+                        fill
+                        priority={false}
+                        className='object-contain'
+                        alt='Car Model'
+                      />
                     </div>
+                    <div className='flex gap-3'>
+                      {/* Temporary; Car side panel views */}
+                      <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                      <Image
+                        src='/hero.png'
+                        fill
+                        priority={false}
+                        className='object-contain'
+                        alt='Car Model'
+                      />
+                      </div>
+                      <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                      <Image
+                        src='/hero.png'
+                        fill
+                        priority={false}
+                        className='object-contain'
+                        alt='Car Model'
+                      />
+                      </div>
+                      <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                      <Image
+                        src='/hero.png'
+                        fill
+                        priority={false}
+                        className='object-contain'
+                        alt='Car Model'
+                      />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='flex flex-1 flex-col gap-2'>
+                    <h2 className='font-semibold text-xl capitalize'>
+                      {car.make} {car.model}
+                    </h2>
+                    <div className='mt-3 flex flex-wrap gap-4'></div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
