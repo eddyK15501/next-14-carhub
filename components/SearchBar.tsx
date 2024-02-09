@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import SearchManufacturer from './SearchManufacturer';
 
@@ -21,8 +22,36 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState('');
   const [model, setModel] = useState('');
+  const router = useRouter();
 
-  const handleSearch = () => {};
+  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (manufacturer === '' && model === '') {
+      return alert('Please fill in the search bar.');
+    }
+
+    updateSearchParams(manufacturer.toLowerCase(), model.toLowerCase());
+  };
+
+  const updateSearchParams = (manufacturer: string, model: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    if (manufacturer) {
+      searchParams.set('manufacturer', manufacturer);
+    } else {
+      searchParams.delete('manufacturer');
+    }
+
+    if (model) {
+      searchParams.set('model', model);
+    } else {
+      searchParams.delete('model');
+    }
+    const newPathname = `${window.location.pathname}?${searchParams}`;
+
+    router.push(newPathname);
+  };
 
   return (
     <form className='searchbar' onSubmit={handleSearch}>
@@ -51,7 +80,7 @@ const SearchBar = () => {
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>
-      <SearchButton otherClasses='max-sm:hidden' /> 
+      <SearchButton otherClasses='max-sm:hidden' />
     </form>
   );
 };
