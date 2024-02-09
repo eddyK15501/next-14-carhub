@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import { CarProps } from '@/types';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImage } from '@/utils';
 import CustomButton from './CustomButton';
 import CarDetails from './CarDetails';
 
@@ -31,9 +31,8 @@ const CarCard = ({ car }: CarCardProps) => {
         <span className='self-end text-[14px] font-medium'>/day</span>
       </p>
       <div className='relative w-full h-40 my-3 object-contain'>
-        {/* Temporary Car Image */}
         <Image
-          src='/hero.png'
+          src={generateCarImage(car)}
           fill
           priority={false}
           className='object-contain'

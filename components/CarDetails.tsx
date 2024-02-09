@@ -38,7 +38,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                 leaveFrom='opacity-100 scale-100'
                 leaveTo='opacity-0 scale-95'
               >
-                <Dialog.Panel className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white text-left shadow-xl transition-all flex flex-col gap-5'>
+                <Dialog.Panel className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white text-left shadow-xl transition-all flex flex-col gap-5 p-6'>
                   <button
                     type='button'
                     onClick={closeModal}
@@ -107,7 +107,9 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           <h4 className='text-grey capitalize'>
                             {key.split('_').join(' ')}
                           </h4>
-                          <p>{value}</p>
+                          <p className='text-black-100 font-semibold capitalize'>
+                            {value}
+                          </p>
                         </div>
                       ))}
                     </div>
