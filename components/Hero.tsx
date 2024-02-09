@@ -28,7 +28,7 @@ const Hero = () => {
             alt='hero'
             fill={true}
             className='object-contain'
-            priority={true}
+            priority={false}
             sizes='(width: 100%)'
           />
         </div>

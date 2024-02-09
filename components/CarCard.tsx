@@ -34,7 +34,7 @@ const CarCard = ({ car }: CarCardProps) => {
         <Image
           src={generateCarImage(car)}
           fill
-          priority={false}
+          priority={true}
           className='object-contain'
           alt='Car Model'
           sizes={'width: 100%'}

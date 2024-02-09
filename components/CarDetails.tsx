@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { Dialog, Transition } from '@headlessui/react';
 import { CarProps } from '@/types';
+import { generateCarImage } from '@/utils';
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -54,40 +55,38 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   </button>
                   <div className='flex flex-1 flex-col gap-3'>
                     <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
-                      {/* Temporary Car Image */}
                       <Image
-                        src='/hero.png'
+                        src={generateCarImage(car)}
                         fill
-                        priority={false}
+                        priority={true}
                         className='object-contain'
                         alt='Car Model'
                       />
                     </div>
                     <div className='flex gap-3'>
-                      {/* Temporary; Car side panel views */}
                       <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
                         <Image
-                          src='/hero.png'
+                          src={generateCarImage(car, '29')}
                           fill
-                          priority={false}
+                          priority={true}
                           className='object-contain'
                           alt='Car Model'
                         />
                       </div>
                       <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
                         <Image
-                          src='/hero.png'
+                          src={generateCarImage(car, '33')}
                           fill
-                          priority={false}
+                          priority={true}
                           className='object-contain'
                           alt='Car Model'
                         />
                       </div>
                       <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
                         <Image
-                          src='/hero.png'
+                          src={generateCarImage(car, '13')}
                           fill
-                          priority={false}
+                          priority={true}
                           className='object-contain'
                           alt='Car Model'
                         />
