@@ -196,7 +196,7 @@
 }
 
 .searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-text text-sm;
 }
 /* END: searchbar styles */
 
@@ -206,7 +206,7 @@
 }
 
 .search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-text text-sm;
 }
 
 .search-manufacturer__options {
@@ -214,6 +214,6 @@
 }
 
 .search-manufacturer__option {
-  @apply cursor-default select-none py-2 pl-10 pr-4;
+  @apply cursor-pointer select-none py-2 pl-10 pr-4;
 }
 /* END: search manufacturer styles */
