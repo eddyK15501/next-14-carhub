@@ -1,8 +1,8 @@
-import { CarProps } from '@/types';
+import { CarProps, FilterProps } from '@/types';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const fetchCars = async () => {
+export const fetchCars = async (filters: FilterProps) => {
   try {
     const headers = {
       'X-RapidAPI-Key': `${process.env.API_KEY}`,
