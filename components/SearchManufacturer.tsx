@@ -43,7 +43,7 @@ const SearchManufacturer = ({
           />
           <Transition
             as={Fragment}
-            leave='transition ease-in duration-100'
+            leave='transition ease-in duration-200'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
             afterLeave={() => setQuery('')}
