@@ -47,6 +47,7 @@ export default async function Home({ searchParams }: SearchProps) {
                 <CarCard car={car} key={index} />
               ))}
             </div>
+            <ShowMore />
           </section>
         ) : (
           <div className='home__error-container'>
