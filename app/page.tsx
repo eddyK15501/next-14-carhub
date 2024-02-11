@@ -10,7 +10,6 @@ type SearchProps = {
     year?: number;
     fuel?: string;
     limit?: number;
-    pageNumber?: number;
   };
 };
 
@@ -49,7 +48,7 @@ export default async function Home({ searchParams }: SearchProps) {
               ))}
             </div>
             <ShowMore
-              pageNumber={(searchParams.pageNumber || 10) / 10}
+              pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > carsData.length}
             />
           </section>
